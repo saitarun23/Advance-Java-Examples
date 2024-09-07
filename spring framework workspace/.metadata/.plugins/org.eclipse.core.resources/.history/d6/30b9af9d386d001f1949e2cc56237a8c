@@ -9,6 +9,7 @@ public class DemoTest {
 
 	public static void main(String[] args) {
 		
+		
 		Resource res=new ClassPathResource("bean.xml");
 		BeanFactory obj=new XmlBeanFactory(res);
 		Employee e1=(Employee)obj.getBean("emp1");
