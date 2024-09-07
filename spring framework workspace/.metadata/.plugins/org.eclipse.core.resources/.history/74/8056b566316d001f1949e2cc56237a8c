@@ -1,0 +1,16 @@
+package com.bean;
+
+import org.springframework.core.io.ClassPathResource;
+import org.springframework.core.io.Resource;
+
+public class DemoTest {
+
+	public static void main(String[] args) {
+		
+		
+		Resource res=new ClassPathResource("bean.xml");
+		
+
+	}
+
+}
