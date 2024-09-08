@@ -27,6 +27,4 @@ public class DemoTest {
 	System.out.println(emp1);
 	}
 		
-
 	}
-

@@ -34,8 +34,7 @@
 	<property name="id" value="102"></property>
 	<property name="name" value="Steven"></property>
 	<property name="salary" value="35000"></property>
-	<!--  <property name="add" ref="address"></property>-->
-	
+	<!--  <property name="add" ref="address"></property>-->	
 </bean>
 
 </beans>
