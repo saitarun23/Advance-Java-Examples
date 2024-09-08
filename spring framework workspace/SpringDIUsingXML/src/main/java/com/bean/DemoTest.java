@@ -20,8 +20,8 @@ public class DemoTest {
 //	e1.display();
 //	e2.display();
 	
-	Address add1 = (Address)obj.getBean("address");
-	System.out.println(add1);
+	//Address add1 = (Address)obj.getBean("address");
+	//System.out.println(add1);
 	
 	Employee emp1 = (Employee)obj.getBean("employee");
 	System.out.println(emp1);
