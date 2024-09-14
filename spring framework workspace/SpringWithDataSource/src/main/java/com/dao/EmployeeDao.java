@@ -118,7 +118,15 @@ return jdbcTemplate.update("update employee set salary = ? where id = ?", emp.ge
 		// Rowmap
 		public List<Employee> findAll() {
 			try {
-	return jdbcTemplate.query("select * from employee", new MyRowMapper());	
+	//return jdbcTemplate.query("select * from employee", new MyRowMapper());	
+				// using Java 8 with lambda style 
+				return jdbcTemplate.query("select * from employee",(ResultSet rs, int rowNum)->{
+					Employee emp = new Employee();
+					emp.setId(rs.getInt(1));
+					emp.setName(rs.getString(2));
+					emp.setSalary(rs.getFloat(3));
+					return emp;
+				});
 			} catch (Exception e) {
 				System.err.println(e);
 				return null;
