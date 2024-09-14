@@ -8,6 +8,7 @@
 </head>
 <body>
 <h2>Spring MVC</h2>
-<a href="hello">Click Here</a>
+<a href="hello">Click Here</a> |
+<a href="hi">Click Here</a> |
 </body>
 </html>
