@@ -22,7 +22,7 @@ public class LoginService {
 	
 	public String signUp(Login login) {
 		if(loginDao.signUp(login)>0) {
-			return "account created successfully";
+			return "Account created successfully";
 		}else {
 			return "failure try once again";
 		}

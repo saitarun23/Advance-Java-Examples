@@ -1,9 +1,0 @@
-package com.bean;
-
-public class Employee {
-
-	private void display() {
-		System.out.println("Employee class method");
-
-	}
-}

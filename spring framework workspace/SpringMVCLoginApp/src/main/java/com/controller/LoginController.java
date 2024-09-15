@@ -48,4 +48,23 @@ public class LoginController {
 		}
 		return mav;
 	}
+	
+	@RequestMapping(value = "signup",method = RequestMethod.POST)
+	public ModelAndView signupFromDb(HttpServletRequest req,Login login) {  // DI for HttpServletReqeust and Login class. 
+		String emaiid = req.getParameter("emailid");
+		String password = req.getParameter("password");
+		
+		login.setEmailid(emaiid);
+		login.setPassword(password);
+		
+		String result = loginService.signUp(login);
+		
+		ModelAndView mav = new ModelAndView();
+		if(result.equals("success")) {
+			mav.setViewName("signupsuccess.jsp");
+		}else {
+			mav.setViewName("signupfailure.jsp");
+		}
+		return mav;
+	}
 }

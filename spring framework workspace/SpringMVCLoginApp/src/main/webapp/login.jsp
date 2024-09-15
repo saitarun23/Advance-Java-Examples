@@ -25,6 +25,7 @@
 <input type="password" name="password"/><br/>
 <input type="submit" value="SignIn"/>
 <input type="reset" value="reset"/>
+<a href="signup.jsp">SignUp!</a>
 </form>
 </body>
 </html>
