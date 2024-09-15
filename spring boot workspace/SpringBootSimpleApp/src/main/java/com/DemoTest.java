@@ -9,7 +9,7 @@ public class DemoTest {
 	public static void main(String[] args) {
 		// start the application
 		SpringApplication.run(DemoTest.class, args);
-
+		System.out.println("spring boot up");
 	}
 
 }
