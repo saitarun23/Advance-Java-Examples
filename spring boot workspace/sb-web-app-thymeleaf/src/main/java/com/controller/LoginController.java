@@ -10,7 +10,10 @@ public class LoginController {
 	
 	@RequestMapping(value = "",method = RequestMethod.GET)
 	public String openPage(Model mm) {
-		mm.addAttribute("msg", "Sai Tarun");
+		mm.addAttribute("msg", "Simplilearn");
+		mm.addAttribute("id", 100);
+		mm.addAttribute("name", "Sai Tarun");
+		mm.addAttribute("age", 24);
 		return "index";
 	}
 
