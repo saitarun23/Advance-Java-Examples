@@ -20,4 +20,10 @@ public class MyController {
 			System.out.println("before index page open this method called.");
 			return "login";		// using view resolver it search page inside templates model.
 		}
+		
+		@RequestMapping(value = "signUpPage",method = RequestMethod.GET)
+		public String openSignUpPage() {
+			System.out.println("SignUp Page");
+			return "signup";		// using view resolver it search page inside templates model.
+		}
 }

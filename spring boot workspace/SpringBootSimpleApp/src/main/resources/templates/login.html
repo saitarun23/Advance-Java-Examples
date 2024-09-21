@@ -5,7 +5,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h2>Login Page</h2>
+<h2>Login Page check details hard coding</h2>
 <form action="checkLoginDetails" method="post">
 <label>EmailId</label>
 <input type="email" name="email"/><br/>
@@ -14,5 +14,17 @@
 <input type="submit" value="SignIn"/>
 <input type="reset" value="reset"/>
 </form>
+<hr/>
+<h2>Login Page check details from Db</h2>
+<form action="signInFromDb" method="post">
+<label>EmailId</label>
+<input type="email" name="email"/><br/>
+<label>Password</label>
+<input type="password" name="password"/><br/>
+<input type="submit" value="SignIn"/>
+<input type="reset" value="reset"/>
+</form>
+<br/>
+<a href="signUpPage">SignUp</a>
 </body>
 </html>
