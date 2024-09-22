@@ -19,4 +19,24 @@ public class ProductService {
 			return "Product didn't store";
 		}
 	}
+	
+	public String deleteProduct(int pid) {
+		if(productDao.deleteProduct(pid)>0) {
+			return "Product deleted successfully";
+		}else {
+			return "Product not preset";
+		}
+	}
+	
+	public String updateProductPrice(Product product) {
+		if(productDao.updateProductPrice(product)>0) {
+			return "Product updated successfully";
+		}else {
+			return "Product not preset";
+		}
+	}
+	
+	public Product findProduct(int pid) {
+		return productDao.findProduct(pid);
+	}
 }
