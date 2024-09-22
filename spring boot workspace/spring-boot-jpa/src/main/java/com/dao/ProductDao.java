@@ -1,5 +1,7 @@
 package com.dao;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
@@ -8,6 +10,7 @@ import com.entity.Product;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.EntityTransaction;
+import jakarta.persistence.Query;
 
 @Repository
 public class ProductDao {
@@ -63,5 +66,20 @@ public class ProductDao {
 		EntityManager manager = emf.createEntityManager();	
 		Product p = manager.find(Product.class, pid);
 		return p;
+	}
+	
+	public List<Product> findAllProducts() {
+		EntityManager manager = emf.createEntityManager();	
+		Query qry = manager.createQuery("select p from Product p");			// JPQL 
+		List<Product> products	= qry.getResultList();
+		return products;
+	}
+	
+	public List<Product> findAllProductsByPrice(float price) {
+		EntityManager manager = emf.createEntityManager();	
+		Query qry = manager.createQuery("select p from Product p where p.price > :my_price");			// JPQL 
+		qry.setParameter("my_price", price);
+		List<Product> products	= qry.getResultList();
+		return products;
 	}
 }
