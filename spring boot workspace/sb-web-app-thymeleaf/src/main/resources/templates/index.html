@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
@@ -8,10 +8,17 @@
 <h2>Welcome to Spring Boot Web App</h2>
 <div th:text="${msg}"></div>
 <div>
-Id : <p th:text="${id}"></p>
-NAME : <p th:text="${name}"></p>
-AGE : <p th:text="${age}"></p>
+<p>Id : <span th:text="${id}"></span> Name : <span th:text="${name}"></span>  Age : <span th:text="${age}"></span> </p>
 </div>
-
+<br/>
+<h2>Login</h2>
+<form method="post" th:action="@{/checkLogin}" th:object="${login}">
+<label>EmailId</label>
+<input type="email" th:field="*{emailid}"/><br/>
+<label>Password</label>
+<input type="password" th:field="*{password}"/><br/>
+<input type="submit" value="SignIn"/>
+<input type="reset" value="reset"/>
+</form>
 </body>
 </html>
