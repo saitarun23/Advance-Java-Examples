@@ -7,14 +7,14 @@
 <body>
 <span style="color:red" th:text="${result}"></span>
 <h2>Welcome to Trainer And Student App!</h2>
-<form th:action="@{storeTrainer}" method="post" th:object="${trainer}">
+<form th:action="@{storeOrUpdateTrainer}" method="post" th:object="${trainer}">
 <label>TId</label>
 <input type="number" th:field="*{tid}"/><br/>
 <label>TName</label>
 <input type="text" th:field="*{tname}"/><br/>
 <label>Tech</label>
 <input type="text" th:field="*{tech}"/><br/>
-<input type="submit" value="store Trainer"/>
+<input type="submit" th:value="${submitButton}" name="b1"/>
 <input type="reset" value="reset"/>
 </form>
 <hr/>
@@ -25,12 +25,14 @@
 		<th>TName</th>
 		<th>Tech</th>
 		<th>Delete</th>
+		<th>Update</th>
 	</tr>
 	<tr th:each="trainer:${trainers}">
 		<td th:text="${trainer.tid}"></td>
 		<td th:text="${trainer.tname}"></td>
 		<td th:text="${trainer.tech}"></td>
 		<td><a th:href="@{deleteTrainer(tid=${trainer.tid})}">Delete</a></td>
+		<td><a th:href="@{findTrainer(tid=${trainer.tid})}">Update</a></td>
 	</tr>
 </table>
 </body>
