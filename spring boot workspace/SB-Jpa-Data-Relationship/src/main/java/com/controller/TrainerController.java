@@ -60,7 +60,7 @@ public class TrainerController {
 		List<Trainer> trainers = trainerService.findAllTrainer();
 		mm.addAttribute("trainers", trainers);
 		mm.addAttribute("trainer", tt);
-		mm.addAttribute("submitButton", "Store Product");
+		mm.addAttribute("submitButton", "Store Trainer");
 		return "index";
 	}
 	
@@ -70,7 +70,7 @@ public class TrainerController {
 		String buttonNameValue = req.getParameter("b1");
 		//System.out.println(buttonNameValue);
 		String result = "";
-		if(buttonNameValue.equals("Store Product")) {
+		if(buttonNameValue.equals("Store Trainer")) {
 			result = trainerService.storeTrainer(tt);
 		}else {
 			result = trainerService.updateTrainerTechnology(tt);
@@ -82,7 +82,7 @@ public class TrainerController {
 		mm.addAttribute("trainers", trainers);
 		mm.addAttribute("result", result);
 		mm.addAttribute("trainer", tt);
-		mm.addAttribute("submitButton", "Store Product");
+		mm.addAttribute("submitButton", "Store Trainer");
 		return "index";
 	}
 	
@@ -95,7 +95,7 @@ public class TrainerController {
 		mm.addAttribute("result", result);
 		mm.addAttribute("trainers", trainers);
 		mm.addAttribute("trainer", tt);
-		mm.addAttribute("submitButton", "Store Product");
+		mm.addAttribute("submitButton", "Store Trainer");
 		return "index";
 	}
 	
@@ -107,7 +107,7 @@ public class TrainerController {
 		List<Trainer> trainers = trainerService.findAllTrainer();
 		mm.addAttribute("trainers", trainers);
 		mm.addAttribute("trainer", tt);		// tt hold trainer record retrieve from db. 
-		mm.addAttribute("submitButton", "Update Product");
+		mm.addAttribute("submitButton", "Update Trainer");
 		return "index";
 	}
 }

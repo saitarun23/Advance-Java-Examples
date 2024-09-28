@@ -1,13 +1,30 @@
 package com.entity;
 
+import java.util.List;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.OneToMany;
 
 @Entity
 public class Trainer {
 
 	@Id
-	private int tid;
+	private int tid;			// tid column 
+	private String tname;				// tname column 
+	private String tech;				// tech
+	@OneToMany
+	@JoinColumn(name="tsid")
+	
+	private List<Student> students;
+	
+	public List<Student> getStudents() {
+		return students;
+	}
+	public void setStudents(List<Student> students) {
+		this.students = students;
+	}
 	public int getTid() {
 		return tid;
 	}
@@ -26,6 +43,5 @@ public class Trainer {
 	public void setTech(String tech) {
 		this.tech = tech;
 	}
-	private String tname;
-	private String tech;
+	
 }

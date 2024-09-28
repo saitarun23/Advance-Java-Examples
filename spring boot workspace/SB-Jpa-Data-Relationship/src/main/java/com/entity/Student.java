@@ -9,7 +9,7 @@ import jakarta.persistence.Id;
 public class Student {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)		// auto increment 
 	private int sid;
 	private String sname;
 	private int age;
