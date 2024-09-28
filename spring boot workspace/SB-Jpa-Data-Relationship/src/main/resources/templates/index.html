@@ -17,5 +17,19 @@
 <input type="submit" value="store Trainer"/>
 <input type="reset" value="reset"/>
 </form>
+<hr/>
+<h2>All Trainers Details</h2>
+<table border="1">
+	<tr>
+		<th>TId</th>
+		<th>TName</th>
+		<th>Tech</th>
+	</tr>
+	<tr th:each="trainer:${trainers}">
+		<td th:text="${trainer.tid}"></td>
+		<td th:text="${trainer.tname}"></td>
+		<td th:text="${trainer.tech}"></td>
+	</tr>
+</table>
 </body>
 </html>
