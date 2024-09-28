@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<span style="color:red" th:text="${result}"></span>
+<h2>Welcome to Trainer And Student App!</h2>
+<form th:action="@{storeTrainer}" method="post" th:object="${trainer}">
+<label>TId</label>
+<input type="number" th:field="*{tid}"/><br/>
+<label>TName</label>
+<input type="text" th:field="*{tname}"/><br/>
+<label>Tech</label>
+<input type="text" th:field="*{tech}"/><br/>
+<input type="submit" value="store Trainer"/>
+<input type="reset" value="reset"/>
+</form>
+</body>
+</html>
