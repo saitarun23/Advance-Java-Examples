@@ -24,11 +24,13 @@
 		<th>TId</th>
 		<th>TName</th>
 		<th>Tech</th>
+		<th>Delete</th>
 	</tr>
 	<tr th:each="trainer:${trainers}">
 		<td th:text="${trainer.tid}"></td>
 		<td th:text="${trainer.tname}"></td>
 		<td th:text="${trainer.tech}"></td>
+		<td><a th:href="@{deleteTrainer(tid=${trainer.tid})}">Delete</a></td>
 	</tr>
 </table>
 </body>
