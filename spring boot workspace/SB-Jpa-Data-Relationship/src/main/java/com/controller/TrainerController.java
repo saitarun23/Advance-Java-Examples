@@ -1,5 +1,7 @@
 package com.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -17,7 +19,10 @@ public class TrainerController {
 	
 	@RequestMapping(value = "",method = RequestMethod.GET)
 	public String openPage(Model mm, Trainer tt) {
+		List<Trainer> trainers = trainerService.findAllTrainer();
+		mm.addAttribute("trainers", trainers);
 		mm.addAttribute("trainer", tt);
+		
 		return "index";
 	}
 	
@@ -25,9 +30,11 @@ public class TrainerController {
 	@RequestMapping(value = "storeTrainer",method = RequestMethod.POST)
 	public String storeTrainer(Model mm, Trainer tt) {
 		String result = trainerService.storeTrainer(tt);
+		List<Trainer> trainers = trainerService.findAllTrainer();
 		tt.setTech("");
 		tt.setTid(0);
 		tt.setTname("");
+		mm.addAttribute("trainers", trainers);
 		mm.addAttribute("result", result);
 		mm.addAttribute("trainer", tt);
 		return "index";
