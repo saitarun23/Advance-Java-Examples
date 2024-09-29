@@ -48,4 +48,21 @@ public class ProductController {
 			//return "Post method called.";
 			return productService.storeProduct(product);
 		}
+		
+		// http://localhost:8080/update_product		put method data {"pid",1,"price":49000,"qty":15}
+		
+		@RequestMapping(value = "update_product",method = RequestMethod.PUT,
+				consumes = MediaType.APPLICATION_JSON_VALUE)
+		public String updateProduct(@RequestBody Product product) {	// ready to receive 
+			System.out.println(product);		// @RequestBody annotation is use to extract json data from body 
+			//return "Post method called.";
+			return productService.updateProduct(product);
+		}
+		
+		// http://localhost:8080/delete_product/1		delete method 
+		
+			@RequestMapping(value = "delete_product/{pid}",method = RequestMethod.DELETE)
+			public String deleteProduct(@PathVariable("pid") int pid) {	 
+				return productService.deleteProduct(pid);
+			}
 }
