@@ -38,4 +38,14 @@ public class ProductService {
 			return null;
 		}
 	}
+	
+	public String storeProduct(Product product) {
+		Optional<Product> result = productRepository.findById(product.getPid());
+		if(result.isPresent()) {
+			return "Produt id must be unique";
+		}else {
+			productRepository.save(product);
+			return "Product stored successfully";
+		}
+	}
 }
