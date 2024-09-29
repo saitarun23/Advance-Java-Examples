@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller
 public class SimpleController {
 	
+	//http://localhost:8080/hello
 	@RequestMapping(value="hello",method = RequestMethod.GET)
 	public @ResponseBody String Hello() {
 		return "welcome to spring boot rest api";
