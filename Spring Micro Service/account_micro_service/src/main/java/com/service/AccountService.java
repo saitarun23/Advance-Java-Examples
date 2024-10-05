@@ -55,7 +55,7 @@ public class AccountService {
 			Account acc = result.get();
 			acc.setAmount(acc.getAmount()+account.getAmount());
 			accountRepository.saveAndFlush(acc);
-			return "Withdraw amount successfully";
+			return "Deposit amount successfully";
 		}else {
 			return "Account not exists";
 		}
