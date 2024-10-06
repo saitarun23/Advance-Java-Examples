@@ -16,6 +16,7 @@ public class GpayMicroServiceApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(GpayMicroServiceApplication.class, args);
+		System.err.println("Gpay micro service up on port number 9494");
 	}
 
 	// this method is responsible to create the object. 
