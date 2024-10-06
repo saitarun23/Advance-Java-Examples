@@ -29,8 +29,8 @@ public class GpayService {
 		if(result.isPresent()) {
 			Gpay gpay  = result.get();
 			
-			String data = restTemplate.getForObject("http://localhost:9393/account/findBalanceByEmailId/"+gpay.getEmailid(), String.class);
-			
+			//String data = restTemplate.getForObject("http://localhost:9393/account/findBalanceByEmailId/"+gpay.getEmailid(), String.class);
+			String data = restTemplate.getForObject("http://ACCSERVICE/account/findBalanceByEmailId/"+gpay.getEmailid(), String.class);
 			return data;
 			
 		}else {
